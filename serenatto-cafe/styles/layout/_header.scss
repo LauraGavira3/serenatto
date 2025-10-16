@@ -1,4 +1,6 @@
 @use "../base/variables";
+@use "../utils/mixins";
+
 .navbar {
   background-color: variables.$secondary-color;
   padding: variables.$padding-regular;
@@ -15,10 +17,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .navbar-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include mixins.flexbox($direction: row);
       gap: 1.5rem;
       .nav-item {
         font-size: 1.25rem; 

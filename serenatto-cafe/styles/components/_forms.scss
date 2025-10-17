@@ -1,0 +1,88 @@
+@use "../base/variables";
+@use "../utils/mixins";
+
+// =============================
+// FORMULÁRIO DE CONTATO
+// =============================
+
+input,
+select,
+button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: variables.$font-size-base;
+  line-height: 1.5;
+  border-radius: variables.$border-radius;
+}
+
+input,
+select {
+  padding: 0.75rem;
+  color: variables.$primary-color;
+  background-color: variables.$secondary-color;
+  background-clip: padding-box;
+  border: 1px solid variables.$form-border-color;
+  @include mixins.transition(border-color, box-shadow);
+
+  &:focus {
+    border-color: variables.$accent-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(variables.$accent-color, 0.25);
+  }
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: variables.$primary-color;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: variables.$border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(variables.$primary-color, 10%);
+  }
+}
+
+// =============================
+// GRUPO DE CAMPOS
+// =============================
+
+.form-group {
+  margin-bottom: variables.$margin-bottom-regular;
+
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+// =============================
+// CONTAINER DO FORMULÁRIO
+// =============================
+
+.contact {
+  padding: 2rem;
+
+  h3 {
+    text-align: center;
+    margin-bottom: variables.$margin-bottom-regular;
+  }
+
+  .contact-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: variables.$padding-regular;
+    border: 1px solid #868E96;
+    border-radius: 0.5rem;
+    background-color: #fff;
+  }
+}
+
+
+
